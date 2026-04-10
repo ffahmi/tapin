@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfirmasi Pesanan</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body class="bg-background font-sans">
+    <div class="max-w-[480px] mx-auto bg-white min-h-screen flex flex-col">
+      <!-- Header -->
+      <div
+        class="flex items-center gap-3 px-4 py-4 border-b bg-tertiery text-white"
+      >
+        <a href="form-order.html" class="text-xl cursor-pointer"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-semibold">Konfirmasi Pesanan</h1>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 px-4 py-4 space-y-6">
+        <!-- Detail Pesanan -->
+        <div>
+          <h2 class="font-semibold text-gray-700 mb-3">Detail Pesanan</h2>
+
+          <div
+            class="bg-gray-100 rounded-xl p-4 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+              >
+                📄
+              </div>
+              <div>
+                <p class="font-semibold">Mutasi STNK</p>
+                <p class="text-sm text-gray-500">Rp. 2.240.000</p>
+              </div>
+            </div>
+            <button class="text-primary text-sm font-medium">Detail</button>
+          </div>
+
+          <button
+            class="w-full mt-3 border border-primary text-primary py-3 rounded-lg font-medium"
+          >
+            + Tambah Jasa
+          </button>
+        </div>
+
+        <!-- Alamat -->
+        <div class="space-y-3">
+          <div class="border-stroke border rounded-xl p-4">
+            <div class="flex justify-between items-start">
+              <div class="flex gap-3">
+                <span>📍</span>
+                <div>
+                  <p class="text-sm text-gray-500">Alamat pengambilan berkas</p>
+                  <p class="font-medium">
+                    A04-04 Flat Merak, Jalan Pulai Harmoni
+                  </p>
+                </div>
+              </div>
+              <!-- button edit address -->
+              <button
+                id="editAddressBtn"
+                class="text-primary text-sm cursor-pointer"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+
+          <label class="flex items-center gap-2 text-sm text-gray-600">
+            <input type="checkbox" class="w-4 h-4" />
+            Alamat TAPIN (berkas dikirim ke alamat kantor TAPIN)
+          </label>
+        </div>
+
+        <!-- Modal -->
+        <div
+          id="addressModal"
+          class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 hidden"
+        >
+          <!-- Modal Content -->
+          <div class="bg-white w-full max-w-md rounded-xl shadow-lg p-6 mx-4">
+            <!-- Header -->
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h2 class="text-lg font-semibold text-gray-800">Alamat</h2>
+                <p class="text-sm text-gray-500">
+                  Lengkapi data pengambilan berkas
+                </p>
+              </div>
+
+              <button
+                id="closeModalBtn"
+                class="text-gray-400 hover:text-gray-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Form -->
+            <div class="space-y-3">
+              <!-- Provinsi -->
+              <input
+                type="text"
+                placeholder="Cari Provinsi..."
+                class="w-full bg-gray-100 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <!-- validasi -->
+              <p class="text-sm text-gray-600 hidden">
+                Dipilih:
+                <span class="font-semibold text-gray-800">Jawa Barat</span>
+              </p>
+
+              <!-- Kota -->
+              <input
+                type="text"
+                placeholder="Cari Kota.."
+                class="w-full bg-gray-100 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <!-- Kecamatan -->
+              <input
+                type="text"
+                placeholder="Cari Kecamatan.."
+                class="w-full bg-gray-100 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <!-- Kode Pos -->
+              <input
+                type="text"
+                placeholder="Kode Pos"
+                class="w-full bg-gray-100 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <!-- Alamat -->
+              <textarea
+                placeholder="Alamat lengkap"
+                class="w-full bg-gray-100 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500 h-24 resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Footer -->
+            <div class="flex gap-3 mt-6">
+              <button
+                id="cancelBtn"
+                class="w-1/2 border rounded-lg py-3 text-gray-700 hover:bg-gray-100"
+              >
+                Batal
+              </button>
+
+              <button
+                class="w-1/2 bg-blue-600 text-white rounded-lg py-3 hover:bg-blue-700"
+              >
+                Simpan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metode Pembayaran -->
+        <div>
+          <h2 class="font-semibold text-gray-700 mb-3">Metode pembayaran</h2>
+          <div class="border rounded-xl p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+              >
+                💳
+              </div>
+              <p class="font-medium">Cash</p>
+            </div>
+            <button
+              class="bg-primary py-1 gap-x-1 flex px-2 items-center text-white text-xs rounded-full cursor-pointer"
+            >
+              <span>pilih</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-3"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Detail Pembayaran -->
+        <div class="bg-gray-100 rounded-xl p-4">
+          <h2 class="font-semibold text-gray-700 mb-3 border-b pb-3">
+            Detail Pembayaran
+          </h2>
+          <div class="space-y-2 text-sm text-gray-700">
+            <div class="flex justify-between">
+              <span>Estimasi Pajak</span>
+              <span>RP. 2.209.000,00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Administrasi</span>
+              <span>RP. 1.550.000,00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Biaya Aplikasi</span>
+              <span>RP. 100.000,00</span>
+            </div>
+            <div class="flex justify-between font-semibold pt-2">
+              <span>Total Keseluruhan</span>
+              <span>RP. 3.859.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="p-4">
+        <button
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+        >
+          Bayar Sekarang
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Modal functionality
+      const editAddressBtn = document.getElementById("editAddressBtn");
+      const addressModal = document.getElementById("addressModal");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const cancelBtn = document.getElementById("cancelBtn");
+
+      // Show modal
+      editAddressBtn.addEventListener("click", () => {
+        addressModal.classList.remove("hidden");
+      });
+
+      // Hide modal functions
+      const hideModal = () => {
+        addressModal.classList.add("hidden");
+      };
+
+      closeModalBtn.addEventListener("click", hideModal);
+      cancelBtn.addEventListener("click", hideModal);
+
+      // Hide modal when clicking outside
+      addressModal.addEventListener("click", (e) => {
+        if (e.target === addressModal) {
+          hideModal();
+        }
+      });
+    </script>
+  </body>
+</html>
