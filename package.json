@@ -1,0 +1,21 @@
+{
+  "name": "tapin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/styles.css -o ./dist/output.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/styles.css -o ./dist/output.css --watch",
+    "dev": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "live-server": "^1.2.2",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^3.4.5"
+  }
+}
