@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pesanan</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body class="bg-background font-sans">
+    <div class="max-w-[480px] mx-auto bg-white min-h-screen">
+      <!-- Header -->
+      <div
+        class="flex items-center gap-3 px-4 py-4 border-b bg-tertiery text-white shadow-sm"
+      >
+        <a href="detail-service.html" class="text-xl cursor-pointer"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-semibold">Formulir Pesanan</h1>
+      </div>
+
+      <!-- Content -->
+      <div class="py-4 space-y-6 pb-32">
+        <!-- Identitas -->
+        <div class="px-4">
+          <h2 class="font-semibold text-gray-700 mb-3">Identitas pengguna</h2>
+          <div class="space-y-3">
+            <input
+              type="text"
+              placeholder="Masukan nama lengkap"
+              class="w-full p-3 border rounded-sm text-sm"
+            />
+            <input
+              type="email"
+              placeholder="Alamat email konfirmasi"
+              class="w-full p-3 border rounded-sm text-sm"
+            />
+            <input
+              type="text"
+              placeholder="Nomor whatsapp"
+              class="w-full p-3 border rounded-sm text-sm"
+            />
+            <textarea
+              placeholder="Alamat Pickup"
+              class="w-full p-3 border rounded-sm text-sm h-24"
+            ></textarea>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="h-1.5 bg-slate-50 my-3"></div>
+        <!-- Kendaraan -->
+        <div class="px-4">
+          <h2 class="font-semibold text-gray-700 mb-3">Kendaraan & Jadwal</h2>
+          <div class="space-y-3">
+            <input
+              type="text"
+              placeholder="Plat Kendaraan"
+              class="w-full p-3 rounded-md text-sm border"
+            />
+            <div class="relative">
+              <input type="date" class="w-full p-3 border rounded-sm text-sm" />
+            </div>
+            <input
+              type="text"
+              placeholder="Jam Pickup (opsional)"
+              class="w-full p-3 border rounded-sm text-sm"
+            />
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="h-1.5 bg-slate-50 my-3"></div>
+        <!-- Konfirmasi -->
+        <div class="px-4">
+          <h2 class="font-semibold text-gray-700 mb-2">Konfirmasi Data</h2>
+          <p class="text-sm text-gray-600 mb-3">
+            Apakah data Anda sudah lengkap?
+          </p>
+          <div class="flex gap-3">
+            <button class="flex-1 border rounded-md py-2 text-sm">Ya</button>
+            <button class="flex-1 border rounded-md py-2 text-sm font-semibold">
+              Tidak
+            </button>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="h-1.5 bg-slate-50 my-3"></div>
+
+        <!-- Dokumen -->
+        <div class="px-4">
+          <h2 class="font-semibold text-gray-700 mb-2">
+            Dokumen yang Harus Disiapkan
+          </h2>
+          <p class="text-sm text-gray-600 mb-2">
+            Mohon persiapkan dokumen berikut ini :
+          </p>
+          <ol class="text-sm text-gray-700 list-decimal pl-5 space-y-1">
+            <li>FC KTP Pemilik Kendaraan Baru</li>
+            <li>STNK Asli Kendaraan</li>
+            <li>BPKB Asli Kendaraan</li>
+            <li>
+              Cek Fisik (Kendaraan harus ada ditempat pengambilan dokumen)
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Bottom Button -->
+      <div
+        class="p-4 bg-white shadow-inner fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto"
+      >
+        <a
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold shadow px-8 text-center block"
+          href="confirm-order.html"
+        >
+          Selanjutnya
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

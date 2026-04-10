@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./dist/output.css" />
     <title>Detail Layanan</title>
   </head>
-  <body class="bg-slate-300 font-sans">
+  <body class="bg-background font-sans">
     <div
       class="max-w-[480px] mx-auto min-h-screen bg-white flex flex-col relative"
     >
@@ -14,8 +20,23 @@
       <div
         class="flex items-center gap-3 px-4 py-4 bg-gray-800 text-white shadow-sm"
       >
-        <a href="index.html" class="text-xl cursor-pointer">←</a>
-        <h1 class="font-semibold">Detail Layanan</h1>
+        <a href="index.html" class="text-xl cursor-pointer"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+        </a>
+        <h1 class="font-semibold text-lg">Detail Layanan</h1>
       </div>
 
       <!-- Image -->
@@ -25,12 +46,12 @@
       <div class="bg-white flex-1 py-4">
         <!-- Title -->
         <div class="px-4">
-          <h2 class="font-semibold text-gray-800">Mutasi STNK Cepat</h2>
-          <p class="text-primary font-semibold mt-1">IDR 150.000</p>
+          <h2 class="font-semibold text-xl text-gray-800">Mutasi STNK Cepat</h2>
+          <p class="text-primary font-semibold mt-1 text-lg">IDR 150.000</p>
         </div>
 
         <!-- Divider -->
-        <div class="h-1.5 bg-slate-100 my-3"></div>
+        <div class="h-1.5 bg-slate-50 my-3"></div>
 
         <!-- Info -->
         <div class="px-4">
@@ -79,11 +100,12 @@
       <div
         class="p-4 bg-white shadow-inner fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto"
       >
-        <button
-          class="w-full bg-primary text-white py-3 rounded-lg font-semibold shadow"
+        <a
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold shadow px-8 text-center block"
+          href="form-order.html"
         >
           Selanjutnya
-        </button>
+        </a>
       </div>
     </div>
   </body>
