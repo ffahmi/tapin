@@ -3,36 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./dist/output.css" />
     <title>Detail Layanan</title>
   </head>
   <body class="bg-slate-300 font-sans">
-    <div class="max-w-[480px] mx-auto min-h-screen bg-white flex flex-col">
+    <div
+      class="max-w-[480px] mx-auto min-h-screen bg-white flex flex-col relative"
+    >
       <!-- Header -->
-      <div class="flex items-center gap-3 px-4 py-4  shadow-sm">
-        <span class="text-xl">←</span>
-        <h1 class="font-semibold text-gray-800">Detail Layanan</h1>
+      <div
+        class="flex items-center gap-3 px-4 py-4 bg-gray-800 text-white shadow-sm"
+      >
+        <a href="index.html" class="text-xl cursor-pointer">←</a>
+        <h1 class="font-semibold">Detail Layanan</h1>
       </div>
 
       <!-- Image -->
-      <img
-        src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f"
-        class="w-full h-52 object-cover"
-      />
+      <img src="/images/detail-image.png" class="w-full h-auto object-cover" />
 
       <!-- Content -->
-      <div class="bg-white flex-1 px-4 py-4">
+      <div class="bg-white flex-1 py-4">
         <!-- Title -->
-        <div>
+        <div class="px-4">
           <h2 class="font-semibold text-gray-800">Mutasi STNK Cepat</h2>
-          <p class="text-blue-600 font-semibold mt-1">IDR 150.000</p>
+          <p class="text-primary font-semibold mt-1">IDR 150.000</p>
         </div>
 
         <!-- Divider -->
-        <div class="h-px bg-gray-200 my-4"></div>
+        <div class="h-1.5 bg-slate-100 my-3"></div>
 
         <!-- Info -->
-        <div>
+        <div class="px-4">
           <h3 class="font-semibold text-gray-800 mb-2">Informasi Layanan</h3>
 
           <p class="font-semibold text-gray-700 mb-3">
@@ -75,9 +76,11 @@
       </div>
 
       <!-- Bottom Button -->
-      <div class="p-4 bg-white shadow-inner">
+      <div
+        class="p-4 bg-white shadow-inner fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto"
+      >
         <button
-          class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold shadow"
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold shadow"
         >
           Selanjutnya
         </button>
