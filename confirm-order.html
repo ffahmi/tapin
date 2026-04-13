@@ -41,29 +41,36 @@
       <div class="flex-1 py-t pb-24">
         <!-- Detail Pesanan -->
         <div class="">
-          <div class="px-4 pt-4">
-            <h2 class="font-semibold text-gray-700">Detail Pesanan</h2>
-          </div>
           <!-- Divider -->
-          <div class="h-1.5 bg-slate-50 my-4"></div>
+
           <div class="px-4">
+            <div class="py-4 border-b mb-3">
+              <h2 class="font-semibold text-gray-700">Detail Pesanan</h2>
+            </div>
             <div class="px-2 pb-4 flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
-                ></div>
+                <img src="/images/document-icon.png" class="w-20 h-auto" />
                 <div>
                   <p class="font-semibold">Mutasi STNK</p>
-                  <p class="text-sm text-gray-600">Rp. 2.240.000</p>
+                  <p class="text-sm md:text-base text-gray-600">
+                    Rp. 2.240.000
+                  </p>
                 </div>
               </div>
-              <button class="text-primary text-sm font-medium">Detail</button>
+              <button
+                id="detailBtn"
+                class="text-primary text-sm md:text-base font-semibold bg-slate-100 rounded-full px-3 py-1"
+              >
+                Detail
+              </button>
             </div>
-            <button
-              class="w-full mt-0 border border-primary text-primary py-3 rounded-lg font-medium"
-            >
-              + Tambah Jasa
-            </button>
+            <div class="w-full flex justify-center">
+              <button
+                class="w-fit px-8 rounded-full mt-0 border border-primary text-primary hover:bg-primary hover:text-white py-2 mx-auto font-medium"
+              >
+                + Tambah Jasa
+              </button>
+            </div>
           </div>
         </div>
         <!-- Divider -->
@@ -104,9 +111,9 @@
               <!-- button edit address -->
               <button
                 id="editAddressBtn"
-                class="text-primary text-sm cursor-pointer"
+                class="text-primary cursor-pointer text-sm md:text-base font-semibold bg-slate-100 rounded-full px-3 py-1"
               >
-                Edit
+                Ubah
               </button>
             </div>
           </div>
@@ -228,21 +235,19 @@
             class="border rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-blue-50"
           >
             <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
-              ></div>
+              <img src="/images/cash-icon.png" class="w-12 h-auto" />
               <p class="font-medium">Cash</p>
             </div>
             <button
               id="selectPaymentBtn"
-              class="bg-primary py-1 gap-x-1 flex px-2 items-center text-white text-xs rounded-full cursor-pointer"
+              class="bg-slate-100 hover:bg-blue-200 text-primary py-1 gap-x-1 flex px-3 items-center text-xs rounded-full cursor-pointer"
             >
-              <span>pilih</span>
+              <span class="font-semibold text-sm md:text-base">Pilih</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-3"
+                class="size-3 text-primary"
               >
                 <path
                   fill-rule="evenodd"
@@ -272,12 +277,10 @@
             <div class="">
               <!-- Cash -->
               <label
-                class="flex items-center justify-between p-3 cursor-pointer hover:bg-blue-50 hover:border-primary"
+                class="flex items-center justify-between p-3 cursor-pointer hover:bg-blue-50 hover:border-primary rounded-md"
               >
                 <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg"
-                  ></div>
+                  <img src="/images/cash-icon.png" class="w-12 h-auto" />
                   <span class="font-medium">Cash</span>
                 </div>
                 <input
@@ -290,12 +293,10 @@
 
               <!-- Bank Transfer -->
               <label
-                class="flex items-center justify-between p-3 cursor-pointer hover:bg-blue-50"
+                class="flex items-center justify-between p-3 cursor-pointer hover:bg-blue-50 rounded-md"
               >
                 <div class="flex items-center gap-3 hover:bg-blue-50">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm"
-                  ></div>
+                  <img src="/images/transfer-icon.png" class="w-12 h-auto" />
                   <span class="font-medium">Bank Transfer</span>
                 </div>
                 <input
@@ -324,6 +325,83 @@
             </div>
           </div>
         </div>
+        <!-- Modal Detail Harga -->
+        <div
+          id="detailModal"
+          class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 hidden"
+        >
+          <div
+            class="w-full max-w-[460px] bg-white rounded-xl shadow-lg p-4 mx-auto"
+          >
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-lg font-semibold text-gray-700">Detail Harga</h1>
+              <button
+                id="editDetailBtn"
+                class="text-primary px-3 py-1 rounded-full bg-slate-100 font-semibold text-sm md:text-base cursor-pointer"
+              >
+                Ubah
+              </button>
+            </div>
+
+            <!-- Section 1 -->
+            <h2 class="text-gray-700 font-medium mb-2">Mutasi STNK</h2>
+
+            <div class="space-y-3 text-gray-700">
+              <div class="flex justify-between border-b pb-2">
+                <span>Biaya Pembukuan Dokumentasi</span>
+                <span class="font-medium">250.000</span>
+              </div>
+              <div class="flex justify-between border-b pb-2">
+                <span>Fiskal</span>
+                <span class="font-medium">30.000</span>
+              </div>
+              <div class="flex justify-between border-b pb-2">
+                <span>Biaya Pendaftaran</span>
+                <span class="font-medium">30.000</span>
+              </div>
+
+              <div class="flex justify-between font-semibold pt-2">
+                <span>Subtotal</span>
+                <span>340.000</span>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="space-y-3 text-gray-700 mt-6">
+              <div class="flex justify-between border-b pb-2">
+                <span>Biaya Proses Dokumen</span>
+                <span class="font-medium">1.400.000</span>
+              </div>
+              <div class="flex justify-between font-semibold pt-2">
+                <span>Subtotal</span>
+                <span>1.900.000</span>
+              </div>
+            </div>
+
+            <!-- Total -->
+            <div class="flex justify-between font-bold text-lg mt-6">
+              <span>Total</span>
+              <span>2.240.000</span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 mt-6">
+              <button
+                id="closeDetailModalBtn"
+                class="w-1/2 border rounded-lg py-3 text-gray-700 hover:bg-gray-100"
+              >
+                Batal
+              </button>
+              <button
+                id="okDetailBtn"
+                class="flex-1 bg-blue-500 text-white py-2 rounded-lg"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
         <!-- Divider -->
         <div class="h-1.5 bg-slate-50 my-4"></div>
         <!-- Detail Pembayaran -->
@@ -332,7 +410,7 @@
             <h2 class="font-bold text-gray-700 mb-3 border-b pb-3">
               Detail Pembayaran
             </h2>
-            <div class="space-y-2 text-sm text-gray-700">
+            <div class="space-y-2 text-base text-gray-700">
               <div class="flex justify-between">
                 <span>Estimasi Pajak</span>
                 <span>RP. 2.209.000,00</span>
@@ -369,6 +447,33 @@
     </div>
 
     <script>
+      // Modal functionality for detail harga
+      const detailBtn = document.getElementById("detailBtn");
+      const detailModal = document.getElementById("detailModal");
+      const closeDetailModalBtn = document.getElementById(
+        "closeDetailModalBtn",
+      );
+      const okDetailBtn = document.getElementById("okDetailBtn");
+
+      // Show detail modal
+      detailBtn.addEventListener("click", () => {
+        detailModal.classList.remove("hidden");
+      });
+
+      // Hide detail modal functions
+      const hideDetailModal = () => {
+        detailModal.classList.add("hidden");
+      };
+
+      closeDetailModalBtn.addEventListener("click", hideDetailModal);
+      okDetailBtn.addEventListener("click", hideDetailModal);
+
+      // Hide detail modal when clicking outside
+      detailModal.addEventListener("click", (e) => {
+        if (e.target === detailModal) {
+          hideDetailModal();
+        }
+      });
       // Modal functionality for address
       const editAddressBtn = document.getElementById("editAddressBtn");
       const addressModal = document.getElementById("addressModal");
